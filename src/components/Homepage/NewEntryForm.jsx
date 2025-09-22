@@ -27,7 +27,7 @@ const NewEntryForm = () => {
         photoUrl: formData.photoUrl || ""
       };
       console.log('[NewEntryForm] Submitting payload:', payload);
-      const response = await fetch(`${API_BASE_URL}/api/user`, {
+  const response = await fetch(`${API_BASE_URL}/api/user`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

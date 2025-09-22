@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import QrReader from 'react-qr-scanner';
 import { API_BASE_URL } from '../utils/apiUtils';
 
+
 const QRScannerEntryGate = () => {
     const [prasadData, setPrasadDataState] = useState(null);
     const [showQrScannerEntry, setShowQrScannerEntry] = useState(true);

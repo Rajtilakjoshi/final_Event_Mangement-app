@@ -1,5 +1,9 @@
 
-export const API_BASE_URL = process.env.REACT_APP_API_URL;
+// Normalize API base URL: remove trailing slash and trailing /api if present
+let apiBase = process.env.REACT_APP_API_URL || '';
+apiBase = apiBase.replace(/\/+$/, ''); // Remove trailing slash
+apiBase = apiBase.replace(/\/api$/, ''); // Remove trailing /api
+export const API_BASE_URL = apiBase;
 
 export const updateSheet = async () => {
     try {

@@ -144,7 +144,7 @@ React.useEffect(() => {
 }, [showUserForm, prasadData, prasadType]);
 
     const getPhotoUrl = (photoUrl) => {
-    return `${API_BASE_URL}/api/${photoUrl}`;
+    return `${API_BASE_URL}/${photoUrl}`;
     };
 
 

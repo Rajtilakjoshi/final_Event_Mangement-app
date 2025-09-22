@@ -118,8 +118,8 @@ const PhotoUploader = () => {
     };
 
     const getPhotoUrl = (photoUrl) => {
-        const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:5000/api/";
-        return `${baseUrl}${photoUrl}`;
+    const baseUrl = API_BASE_URL || "http://localhost:5000";
+    return `${baseUrl}/${photoUrl}`;
     };
 
     useEffect(() => {
