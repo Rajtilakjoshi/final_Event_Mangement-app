@@ -14,7 +14,12 @@ from datetime import datetime
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)  # Enable CORS for all routes and methods
+# Set allowed origins for CORS
+allowed_origins = [
+    "http://localhost:3000",
+    "https://final-event-mangement-app.vercel.app"
+]
+CORS(app, resources={r"/*": {"origins": allowed_origins}}, supports_credentials=True)
 
 csv_data = []
 csv_by_token = {}
@@ -38,7 +43,7 @@ def save_csv_data():
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(csv_data)
-CORS(app)  # Enable CORS for all routes
+# (Removed duplicate CORS(app) call)
 
 # Mock data storage (in production, use a real database)
 users_db = {}

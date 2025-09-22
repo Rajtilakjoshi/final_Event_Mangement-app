@@ -14,7 +14,7 @@ const LazySearchResult = ({ result }) => {
       <p><strong>Alternate Phone:</strong> {result.alternatePhoneNumber}</p>
       {result.photoUrl && (
         <div className="token-finder__photo-container">
-          <img loading="lazy" src={`http://localhost:5000/${result.photoUrl}`} alt="User" className="token-finder__photo" />
+          <img loading="lazy" src={`${process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL.replace(/\/api\/?$/, '') : 'http://localhost:5000'}/${result.photoUrl}`} alt="User" className="token-finder__photo" />
         </div>
       )}
     </div>
